@@ -11,4 +11,11 @@
 		public $token;
 	}
 
+
+		interface UserDao{
+		public function findByToken($token);
+		
+	
+	}
+
  ?>

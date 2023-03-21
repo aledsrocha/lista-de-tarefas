@@ -3,7 +3,7 @@
     session_start();
     $base = 'http://localhost/tarefas';
 
-    $db_name = 'listatarefas';
+    $db_name = 'tarefas';
     $db_host = 'localhost';
     $db_user = 'root';
     $db_pass = '';

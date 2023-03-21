@@ -1,0 +1,49 @@
+<?php 
+
+	require_once 'models/User.php';
+
+
+	class UserDaoMysql implements UserDao {
+
+		private $pdo;
+
+		public function __construct(PDO $driver){
+			$this->pdo = $driver;
+
+		}
+
+		private function generateUser($array){
+			$u = new User();
+			$u->id = $array['id'] ?? 0;
+			$u->email = $array['email'] ?? '';
+			$u->password = $array['password'] ?? '';
+			$u->name = $array['name'] ?? '';
+			$u->birthdate = $array['birthdate'] ?? '';
+			$u->avatar = $array['avatar'] ?? '';
+			$u->token = $array['token'] ?? '';
+
+			return $u;
+			
+		}
+
+		public function findByToken($token){
+			if (!empty($token)) {
+				$sql = $this->pdo->prepare("SELECT * FROM users WHERE token = :token");
+				$sql->bindValue(':token', $token);
+				$sql->execute();
+
+				if ($sql->rowCount() > 0) {
+					$data = $sql->fetch(PDO::FETCH_ASSOC);
+					$user = $this->generateUser($data);
+					return $user;
+				}
+			}
+
+			return false;
+		}
+
+
+
+	}//class
+
+ ?>
