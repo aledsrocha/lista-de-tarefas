@@ -35,5 +35,45 @@
 			exit;
 
 		}//checktoken
+
+		public function validateLogin($email, $password){
+
+			$user = $this->dao->findByEmail($email);
+
+			if ($user) {
+				if (password_verify($password, $user->password)) {
+					$token = md5(time().rand(0, 9999));
+					$_SESSION['token'] = $token;
+					$this->dao->update($user);
+
+					return true;
+				}
+			}
+
+			return false;
+
+		}
+
+		public function emailExists($email){
+			return $this->dao->findByEmail($email) ? true : false ;
+		}
+
+		public function registerUser($name, $password, $email, $birthdate){
+			
+
+			$hash = password_hash($password, PASSWORD_DEFAULT);
+			$token = md5(time().rand(0, 9999));
+
+			$newUser = new User();
+			$newUser->name = $name;
+			$newUser->email = $email;
+			$newUser->password = $hash;
+			$newUser->birthdate = $birthdate;
+			$newUser->token = $token;
+
+			$this->dao->insert($newUser);
+
+			$_SESSION['token'] = $token;
+		}
 	}
  ?>

@@ -10,10 +10,12 @@
   <link rel="stylesheet" type="text/css" href="<?=$base;?>/assent/css/login.css">
   <title>SIGNUP</title>
 
+<body>
+
   <div class="login">
   <div class="login-triangle"></div>
   
-  <h2 class="login-header">Log in</h2>
+  <h2 class="login-header">cadastrar</h2>
 
   <form class="login-container" method="POST" action="signup_action.php">
     <p><input type="email" placeholder="Email" name="email"></p>
@@ -24,7 +26,15 @@
   </form>
 </div>
 </head>
-<body>
 
 </body>
+
+<!-- mascara o campo-->
+    <script src="https://unpkg.com/imask"></script>
+    <script >
+        IMask(
+            document.getElementById("birthdate"),
+            {mask: '00/00/0000'}
+            );
+    </script>
 </html>
