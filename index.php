@@ -8,4 +8,10 @@
 	//armazenando a info do user
 	$userInfo = $auth->checktoken();
 
+
+
+
+
 ?>
+
+
