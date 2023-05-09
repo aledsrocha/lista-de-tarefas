@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+
+	font-family: Arial, sans-serif;
+	margin-left: 150px;
+	padding-top: 40px;
+	max-width: 900px;
+}
+h1{
+	border-bottom: 1px solid #DCDCDC;
+	padding-bottom:20px;
+
+}
+
+form label{
+	display: block;
+	font-weight: 600;
+	padding-bottom: 10px;
+}
+input{
+	
+}
+.barra{
+	width: 500px;
+	text-align: center;
+	height: 30px;
+	padding-bottom: 20px;
+	border-color: #DCDCDC ;
+	border-radius: 20px;
+}
+
+::placeholder{
+	
+	float: left;
+	padding-top: 15px;
+	margin-left: 5px;
+}
+
+select{
+	width: 500px;
+	height: 30px;
+	border-radius: 15px;
+}
