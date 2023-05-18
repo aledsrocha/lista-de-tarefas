@@ -30,10 +30,10 @@
 		<label>Autor</label>
 		<input type="text" name="name" class="barra" placeholder="nome do proprietario">
 		<label>status</label>
-		<select name="select">
-			<option></option>
-			<option>Pendente</option>
-			<option>Concluído</option>
+		<select name="selecionar">
+			<option value="0"></option>
+			<option value="pendente">Pendente</option>
+			<option value="concluido">Concluído</option>
 			
 		</select><br><br>
 
