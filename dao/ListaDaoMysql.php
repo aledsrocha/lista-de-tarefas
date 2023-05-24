@@ -1,7 +1,7 @@
 <?php 
 
 	require_once 'models/Lista.php';
-	require_once 'dao/UserDaoMysql.php';
+	
 
 
 	class ListaDaoMysql implements ListaDao{
@@ -24,10 +24,9 @@
 			$sql->execute();
 		}
 
-		public function delete($id){
-			$sql = $this->pdo->prepare("DELETE FROM lista WHERE id = :id");
-			$sql->bindValue(':id', $id);
-			$sql->execute();
-		}
+		
+
+
+
 	}//class
  ?>

@@ -10,6 +10,6 @@
 
 	interface ListaDao{
 		public function insert(Lista $l);
-		public function delete($id);
+		
 	}
  ?>
